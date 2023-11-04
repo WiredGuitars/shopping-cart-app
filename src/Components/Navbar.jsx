@@ -1,13 +1,24 @@
 import React from "react";
-import images from "../assets/wlogo.png";
+import Logo from "../assets/wlogo.png";
 import Styles from "../assets/Navbar.module.css";
+import Cart from "../assets/blackShoppingCart.png"
 
 export default function Navbar() {
-  return (
+  const handleClick = () => {
+    
+  }
+  
+  
+    return (
     <div className={Styles.navContainer}>
       <div className={Styles.leftLogo}>
-        <img className={Styles.logo} src={images} alt="Wired's Wares' logo" />
+        <img onClick={handleClick} className={Styles.logo} src={Logo} alt="Wired's Wares' Logo" />
         <>Wired's Wares'</>
+      </div>
+      <div className={Styles.rightLogo}>
+        <button>About</button>
+        <button>Shop</button>
+        <img className={Styles.cart} src={Cart} alt="Black Shopping Cart Icon" />
       </div>
     </div>
   );
