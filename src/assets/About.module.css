@@ -1,0 +1,15 @@
+.mainContainer{
+    border-bottom: 1px solid;
+    height: 400px;
+    width: 100vw;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.mainText {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 40px;
+  }
