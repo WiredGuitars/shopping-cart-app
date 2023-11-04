@@ -7,8 +7,6 @@ export default function Navbar() {
   const handleClick = () => {
     
   }
-  
-  
     return (
     <div className={Styles.navContainer}>
       <div className={Styles.leftLogo}>
