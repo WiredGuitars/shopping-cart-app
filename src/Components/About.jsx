@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from '../assets/About.module.css'
 
-export default function Home() {
+export default function About() {
   return (
     <div className={Styles.mainContainer}>
       <div className={Styles.mainText}>
