@@ -14,8 +14,8 @@ export default function Navbar() {
         <>Wired's Wares'</>
       </div>
       <div className={Styles.rightLogo}>
-        <button>About</button>
-        <button>Shop</button>
+        <button className={Styles.buttons}>About</button>
+        <button className={Styles.buttons}>Shop</button>
         <img className={Styles.cart} src={Cart} alt="Black Shopping Cart Icon" />
       </div>
     </div>
