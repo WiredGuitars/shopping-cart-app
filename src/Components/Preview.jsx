@@ -9,10 +9,11 @@ const [products, setProducts] = useState([])
 useEffect(() => {
     async function fetchData() {
         try {
-            const response = await fetch('https://fakestoreapi.com/products');
+            const response = await fetch('https://fakestoreapi.com/products?limit=5');
             const data = await response.json();
             console.log(data);
-            setProducts(data)
+            const selectedProducts = [data[0], data[1], data[4]]
+            setProducts(selectedProducts)
         } catch (error) {
             console.error('Error fetching data:', error);
         }
