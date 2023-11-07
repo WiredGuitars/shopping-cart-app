@@ -1,5 +1,6 @@
 import "./App.css";
 import About from "./Components/About";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Preview from "./Components/Preview";
 import Product from "./Components/Product";
@@ -13,6 +14,7 @@ export default function App() {
       <Preview />
       <ShoppingCart />
       <Product />
+      <Footer />
     </>
   )
 }

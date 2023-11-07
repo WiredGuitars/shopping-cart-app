@@ -5,7 +5,7 @@ import Cart from "../assets/blackShoppingCart.png"
 
 export default function Navbar() {
   const handleClick = () => {
-    
+    console.log("Hello world")
   }
     return (
     <div className={Styles.navContainer}>
