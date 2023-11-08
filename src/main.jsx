@@ -1,17 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import Store from "./Components/Store";
 import './index.css'
+import Store from './Components/Store'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/Store",
+    element: <Store />
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={App} />
-        <Route path="/Store/:productId" component={Store} />
-      </Switch>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

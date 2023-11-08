@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Styles from "../assets/Preview.module.css";
 
+
 export default function Preview() {
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -26,11 +26,8 @@ export default function Preview() {
     fetchData();
   }, []);
    const handleImageClick = (product) => {
-  // Get the product ID from the clicked product
   const productId = product.id;
-  
-  // Use the product ID to navigate to the Store component with the selected product
-  router.history.push(`/Store/${productId}`);
+    
 };
 
 
