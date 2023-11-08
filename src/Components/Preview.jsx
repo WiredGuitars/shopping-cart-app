@@ -30,12 +30,8 @@ export default function Preview() {
   }, []);
   const handleImageClick = (product) => {
     const productId = product.id;
-    navigate(`/Store/${productId}`);
+    navigate(`/Store/${productId}`, { state: { product } });
   };
-
-    
-;
-
 
   return (
     <div className={Styles.title}>
