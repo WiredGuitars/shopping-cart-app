@@ -1,9 +1,15 @@
-import React from 'react'
+// Store.jsx
+import React from 'react';
 
-export default function ShoppingCart() {
+const Store = ({ product }) => {
   return (
     <div>
-      hello world
+      <h2>{product.title}</h2>
+      <p>{product.description}</p>
+      <p>Price: ${product.price}</p>
+      {/* Add purchase options or form here */}
     </div>
-  )
-}
+  );
+};
+
+export default Store;

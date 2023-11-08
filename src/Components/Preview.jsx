@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Styles from "../assets/Preview.module.css";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Preview() {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -25,10 +28,13 @@ export default function Preview() {
 
     fetchData();
   }, []);
-   const handleImageClick = (product) => {
-  const productId = product.id;
+  const handleImageClick = (product) => {
+    const productId = product.id;
+    navigate(`/Store/${productId}`);
+  };
+
     
-};
+;
 
 
   return (
