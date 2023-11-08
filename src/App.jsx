@@ -1,20 +1,14 @@
-import "./App.css";
-import About from "./Components/About";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
-import Preview from "./Components/Preview";
-import Product from "./Components/Product";
-import ShoppingCart from "./Components/ShoppingCart";
-
+import React from 'react'
+import About from './Components/About'
+import Preview from './Components/Preview'
+import Navbar from './Components/Navbar'
 export default function App() {
-  return(
+  return (
     <>
       <Navbar />
       <About />
       <Preview />
-      <ShoppingCart />
-      <Product />
-      <Footer />
     </>
+    
   )
 }

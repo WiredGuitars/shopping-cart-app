@@ -1,5 +1,6 @@
 import React from 'react'
 import Styles from '../assets/About.module.css'
+import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
@@ -13,7 +14,9 @@ export default function About() {
       and utilizing routing to create a single-page-application (SPA) are just some of the goals of this assignment.
       Feel free to browse around. If you see anything that looks out of place, be sure to let me know!
       </div>
+      <Link to="/Store">
       <button className={Styles.shopButton}>Shop Now!</button>
+      </Link>
     </div>
 
   )
