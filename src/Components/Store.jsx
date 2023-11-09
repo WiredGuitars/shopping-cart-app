@@ -19,7 +19,19 @@ const Store = () => {
         {/* Add purchase options or form for the default product */}
       </div>
     );
-  }
+  // const location = useLocation();
+  // const product = location.state ? location.state.product : null;
+  // if (!product){   
+  
+  // while( i = 0, i < 20, i++){
+  //   document
+  // }
+
+
+
+
+
+}
 
  
     

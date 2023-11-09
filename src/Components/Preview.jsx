@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Styles from "../assets/Preview.module.css";
 import { useNavigate } from 'react-router-dom';
+import { fetchProductData } from "./Fetch";
 
 
 export default function Preview() {
@@ -10,10 +11,7 @@ export default function Preview() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(
-          "https://fakestoreapi.com/products?limit=5"
-        );
-        const data = await response.json();
+        const data = await fetchProductData()
         const selectedProducts = [
           { ...data[0], itemPrice: `Satchel: $${data[0].price}` },
           { ...data[1], itemPrice: `Shirt: $${data[1].price}` },

@@ -1,36 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../assets/wlogo.png";
 import Styles from "../assets/Navbar.module.css";
 import Cart from "../assets/blackShoppingCart.png";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const handleClick = () => {
-    console.log("Hello world");
+  const [cartItemCount, setCartItemCount] = useState(0);
+  const addItemToCart = () => {
+    // Logic to add item to the cart
+    // ...
+    // After adding an item, update the count
+    setCartItemCount(cartItemCount + 1);
   };
+
   return (
     <div className={Styles.navContainer}>
       <div className={Styles.leftLogo}>
-        <img
-          onClick={handleClick}
-          className={Styles.logo}
-          src={Logo}
-          alt="Wired's Wares' Logo"
-        />
+        <img className={Styles.logo} src={Logo} alt="Wired's Wares' Logo" />
         <>Wired's Wares'</>
       </div>
       <div className={Styles.rightLogo}>
         <Link to="/">
           <button className={Styles.buttons}>About</button>
-        </Link><Link to ="/Store">
-          
+        </Link>
+        <Link to="/Store">
           <button className={Styles.buttons}>Store</button>
         </Link>
-        <img
-          className={Styles.cart}
-          src={Cart}
-          alt="Black Shopping Cart Icon"
-        />
+        <div className={Styles.cartContainer}>
+          <img
+            className={Styles.cart}
+            src={Cart}
+            alt="Black Shopping Cart Icon"
+          />
+          <div className={Styles.cartCount}>{cartItemCount}</div>
+        </div>
       </div>
     </div>
   );
