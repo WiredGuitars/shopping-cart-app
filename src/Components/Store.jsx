@@ -1,12 +1,10 @@
 // Store.jsx
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-
 const Store = () => {
   
   const location = useLocation();
   const product = location.state ? location.state.product : null;
-  
   if (!product){ 
     const defaultProduct = {
     title: 'Default Product',
