@@ -14,7 +14,6 @@ export default function Preview() {
           "https://fakestoreapi.com/products?limit=5"
         );
         const data = await response.json();
-        console.log(data);
         const selectedProducts = [
           { ...data[0], itemPrice: `Satchel: $${data[0].price}` },
           { ...data[1], itemPrice: `Shirt: $${data[1].price}` },
