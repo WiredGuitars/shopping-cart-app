@@ -25,9 +25,11 @@ export default function Preview() {
 
     fetchData();
   }, []);
+
+
   const handleImageClick = (product) => {
     const productId = product.id;
-    navigate(`/Store/${productId}`, { state: { product } });
+    navigate(`/Store/${productId}`, { state:  {product} });
   };
 
   return (
