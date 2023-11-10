@@ -25,7 +25,7 @@
   flex-direction: column;
   margin: 0px;
   background-color: grey;
-  border: solid 1px;
+  border: solid 1px white;
   font-size: 10px;
   color: white;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
@@ -39,4 +39,8 @@
 .previewBoxes:active {
   transform: scale(.9);
   transition: transform .1s ease;
+}
+.itemBoxes{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

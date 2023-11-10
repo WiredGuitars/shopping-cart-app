@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { fetchProductData } from "./Fetch";
+import Styles from "../assets/Preview.module.css"
+
+
 const Store = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -16,24 +19,27 @@ const Store = () => {
     fetchData();
   }, []);
 
+  function handleImageClick(product) {
+    console.log(`Clicked on ${product.title}`)
+  } 
+
   const location = useLocation();
   const product = location.state ? location.state.product : null;
   if (!product) {
     
     return (
-      <div>
+      <div className={Styles.itemBoxes}>
       {products.map((product) => (
-      <div key = {product.id}>Item: {product.title}</div>
+      <div className={`${Styles.previewBoxes}`} style = {{width: 'fit-content' }} key={product.id} onClick={() => handleImageClick(product)}>
+            <img
+              className={Styles.previewImgs}
+              src={product.image}
+              alt={product.title}/>
+            <h1>{product.price}</h1>
+          </div>
       ))}  
       </div>
     );
-    // const location = useLocation();
-    // const product = location.state ? location.state.product : null;
-    // if (!product){
-
-    // while( i = 0, i < 20, i++){
-    //   document
-    // }
   }
 
   return (
