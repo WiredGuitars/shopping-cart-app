@@ -23,13 +23,15 @@
 .previewBoxes {
   display: flex;
   flex-direction: column;
-  margin: 0px;
+  margin: 5px;
   background-color: grey;
   border: solid 1px white;
   font-size: 10px;
   color: white;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  text-align: center;
   padding: 5px;
+  
 }
 
 .previewBoxes:hover {

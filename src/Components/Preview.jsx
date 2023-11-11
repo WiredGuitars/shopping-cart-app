@@ -14,7 +14,7 @@ export default function Preview() {
         const data = await fetchProductData()
         const selectedProducts = [
           { ...data[0], itemPrice: `Satchel: $${data[0].price}` },
-          { ...data[1], itemPrice: `Shirt: $${data[1].price}` },
+          { ...data[1], itemPrice: `Shirt: $${data[1].price.toFixed(2)}` },
           { ...data[4], itemPrice: `Choker: $${data[4].price}` },
         ];
         setProducts(selectedProducts);

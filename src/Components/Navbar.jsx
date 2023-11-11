@@ -15,8 +15,10 @@ export default function Navbar() {
 
   return (
     <div className={Styles.navContainer}>
-      <div className={Styles.leftLogo}>
+        <div className={Styles.leftLogo}>
+      <Link to="/">
         <img className={Styles.logo} src={Logo} alt="Wired's Wares' Logo" />
+      </Link>
         <>Wired's Wares'</>
       </div>
       <div className={Styles.rightLogo}>
