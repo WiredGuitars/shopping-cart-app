@@ -5,7 +5,7 @@ import Styles from "../assets/Preview.module.css";
 
 const Store = () => {
   const [products, setProducts] = useState([]);
-  const [userInput, setUserInput] = useState('')
+  const [userInput, setUserInput] = useState('1')
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +21,8 @@ const Store = () => {
   }, []);
 
   const handleInputChange = (event) => {
-    setUserInput(event.target.value)
+    const value = event.target.value;
+    setUserInput(Math.max(1, Math.floor(Number(value))));
   }
 
   function handleImageClick(product) {
@@ -29,9 +30,15 @@ const Store = () => {
     navigate(`/Store/${productId}`, { state: { product } });
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, prevInfo) => {
     event.preventDefault();
-    console.log("User input:", userInput);
+
+    const itemPrice = prevInfo.price;
+    const userQuant = userInput;
+    const userPrice = parseFloat(itemPrice) * userQuant;
+
+    // Log the result for now; you can modify this part as needed
+    console.log(`You want to buy ${userQuant} of ${prevInfo.title} for $${userPrice.toFixed(2)}`);
   };
 
   const location = useLocation();
@@ -73,14 +80,17 @@ const Store = () => {
           />
           <h1>${prevInfo.price.toFixed(2)}</h1>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => handleSubmit(e, prevInfo)}>
           <input
+            type="number"
+            min="1"
             placeholder="How many do you want?"
             className={Styles.inputField}
             onChange={handleInputChange}
           />
+        <button type="submit" className={Styles.addToCart}>Add To Cart</button>
+        <div className={Styles.confirmationWindow}></div>
         </form>
-        <button className={Styles.addToCart}>Add To Cart</button>
       </div>
     );
   }

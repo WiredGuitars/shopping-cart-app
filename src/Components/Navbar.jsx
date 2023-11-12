@@ -4,14 +4,8 @@ import Styles from "../assets/Navbar.module.css";
 import Cart from "../assets/blackShoppingCart.png";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
-  const [cartItemCount, setCartItemCount] = useState(0);
-  const addItemToCart = () => {
-    // Logic to add item to the cart
-    // ...
-    // After adding an item, update the count
-    setCartItemCount(cartItemCount + 1);
-  };
+export default function Navbar({ cartItemCount }) {
+  
 
   return (
     <div className={Styles.navContainer}>
