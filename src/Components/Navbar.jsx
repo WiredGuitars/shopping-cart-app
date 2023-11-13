@@ -4,7 +4,7 @@ import Styles from "../assets/Navbar.module.css";
 import Cart from "../assets/blackShoppingCart.png";
 import { Link } from "react-router-dom";
 import { useCart } from "./CartProvider";
-import Cashout from "./Cashout";
+import Checkout from "./Checkout";
 
 export default function Navbar() {
   const { getTotalItems } = useCart();
@@ -25,15 +25,16 @@ export default function Navbar() {
         <Link to="/Store">
           <button className={Styles.buttons}>Store</button>
         </Link>
-        <div className={Styles.cartContainer}>
-          <img
-            className={Styles.cart}
-            src={Cart}
-            alt="Black Shopping Cart Icon"
-            onClick= {() => Cashout()}
-          />
-          <div className={Styles.cartCount}>{getTotalItems()}</div>
-        </div>
+        <Link to = "/Checkout">
+          <div className={Styles.cartContainer}>
+            <img
+              className={Styles.cart}
+              src={Cart}
+              alt="Black Shopping Cart Icon"
+            />
+            <div className={Styles.cartCount}>{getTotalItems()}</div>
+          </div>
+        </Link>
       </div>
     </div>
   );

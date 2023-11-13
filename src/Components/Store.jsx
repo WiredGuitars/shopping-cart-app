@@ -25,7 +25,7 @@ const Store = () => {
 
   const handleAddToCart = (prevInfo) => {
     // Some logic to get product and quantity
-    const product = prevInfo.id
+    const product = prevInfo
     const quantity = userInput;
 
     // Add to cart using the addToCart function from context

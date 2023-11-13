@@ -6,9 +6,7 @@ import Store from "./Components/Store";
 import "./index.css";
 import Navbar from "./Components/Navbar";
 import { CartProvider } from "./Components/CartProvider";
-import Cashout from "./Components/Cashout";
-
-
+import Checkout from "./Components/Checkout";
 
 const Root = () => {
   const [cartItemCount, setCartItemCount] = useState(0);
@@ -24,7 +22,7 @@ const Root = () => {
             <Route path="/" element={<App />} />
             <Route path="/Store" element={<Store />} />
             <Route path="/Store/:productId" element={<Store />} />
-            <Route path="/Store/Cashout" element = {<Cashout />} />
+            <Route path="/Checkout" element = {<Checkout />} />
           </Routes>
         </Router>
       </CartProvider>
