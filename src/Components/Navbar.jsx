@@ -3,8 +3,11 @@ import Logo from "../assets/wlogo.png";
 import Styles from "../assets/Navbar.module.css";
 import Cart from "../assets/blackShoppingCart.png";
 import { Link } from "react-router-dom";
+import { useCart } from "./CartProvider";
+import Cashout from "./Cashout";
 
-export default function Navbar({ cartItemCount }) {
+export default function Navbar() {
+  const { getTotalItems } = useCart();
   
 
   return (
@@ -27,8 +30,9 @@ export default function Navbar({ cartItemCount }) {
             className={Styles.cart}
             src={Cart}
             alt="Black Shopping Cart Icon"
+            onClick= {() => Cashout()}
           />
-          <div className={Styles.cartCount}>{cartItemCount}</div>
+          <div className={Styles.cartCount}>{getTotalItems()}</div>
         </div>
       </div>
     </div>

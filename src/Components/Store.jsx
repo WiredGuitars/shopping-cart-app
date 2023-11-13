@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { fetchProductData } from "./Fetch";
 import Styles from "../assets/Preview.module.css";
+import { useCart } from "./CartProvider";
 
 const Store = () => {
   const [products, setProducts] = useState([]);
   const [userInput, setUserInput] = useState('1')
   const navigate = useNavigate();
+  const { addToCart } = useCart();
+
 
   useEffect(() => {
     async function fetchData() {
@@ -19,6 +22,15 @@ const Store = () => {
     }
     fetchData();
   }, []);
+
+  const handleAddToCart = (prevInfo) => {
+    // Some logic to get product and quantity
+    const product = prevInfo.id
+    const quantity = userInput;
+
+    // Add to cart using the addToCart function from context
+    addToCart(product, quantity);
+  };
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -88,7 +100,7 @@ const Store = () => {
             className={Styles.inputField}
             onChange={handleInputChange}
           />
-        <button type="submit" className={Styles.addToCart}>Add To Cart</button>
+        <button onClick={() => handleAddToCart(prevInfo)} type="submit" className={Styles.addToCart}>Add To Cart</button>
         <div className={Styles.confirmationWindow}></div>
         </form>
       </div>
