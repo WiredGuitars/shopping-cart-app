@@ -9,6 +9,8 @@ const Store = () => {
   const [userInput, setUserInput] = useState('1')
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const [userFeedback, setUserFeedback] = useState('')
+  
 
 
   useEffect(() => {
@@ -49,8 +51,9 @@ const Store = () => {
     const userQuant = userInput;
     const userPrice = parseFloat(itemPrice) * userQuant;
 
-    // Log the result for now; you can modify this part as needed
-    console.log(`You want to buy ${userQuant} of ${prevInfo.title} for $${userPrice.toFixed(2)}`);
+    setUserFeedback(`You added ${userQuant} of ${prevInfo.title} for $${userPrice.toFixed(2)}`)
+
+    
   };
 
   const location = useLocation();
@@ -91,6 +94,7 @@ const Store = () => {
             alt={prevInfo.title}
           />
           <h1>${prevInfo.price.toFixed(2)}</h1>
+          <h2>{prevInfo.title}</h2>
         </div>
         <form onSubmit={(e) => handleSubmit(e, prevInfo)}>
           <input
@@ -101,7 +105,7 @@ const Store = () => {
             onChange={handleInputChange}
           />
         <button onClick={() => handleAddToCart(prevInfo)} type="submit" className={Styles.addToCart}>Add To Cart</button>
-        <div className={Styles.confirmationWindow}></div>
+        <div className={Styles.confirmationWindow}>{userFeedback}</div>
         </form>
       </div>
     );

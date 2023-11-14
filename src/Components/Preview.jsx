@@ -37,11 +37,12 @@ export default function Preview() {
       Featured Items
       <div className={Styles.mainContainer}>
         {products.map((product) => (
-          <div className={Styles.previewBoxes} key={product.id} onClick={() => handleImageClick(product)}>
+          <div style={{maxWidth: "fit-content"}} className={Styles.previewBoxes} key={product.id} onClick={() => handleImageClick(product)}>
             <img
               className={Styles.previewImgs}
               src={product.image}
               alt={product.title}
+              style={{maxWidth: "300px", maxHeight: "200px"}}
             />
             <h1>{product.itemPrice}</h1>
           </div>

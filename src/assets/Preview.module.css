@@ -16,8 +16,8 @@
 
 }
 .previewImgs {
-  height: 200px;
-  width: fit-content;
+  height: 400px;
+  width: auto;
   cursor: pointer;
 }
 .previewBoxes {

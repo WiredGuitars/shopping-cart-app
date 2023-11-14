@@ -19,8 +19,7 @@ const Checkout = () => {
       <ul>
         {cartItems.map((item) => (
           <li key={item.id}>
-            {item.title} x {item.quantity} - $
-            {item.price && !isNaN(item.price) ? item.price.toFixed(2) : "N/A"}
+            {item.title} x {item.quantity} - ${item.price.toFixed(2)}
           </li>
         ))}
       </ul>
