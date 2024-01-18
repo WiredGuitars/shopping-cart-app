@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Styles from "../assets/Preview.module.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { fetchProductData } from "./Fetch";
-
 
 export default function Preview() {
   const [products, setProducts] = useState([]);
@@ -11,7 +10,7 @@ export default function Preview() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchProductData()
+        const data = await fetchProductData();
         const selectedProducts = [
           { ...data[0], itemPrice: `Satchel: $${data[0].price}` },
           { ...data[1], itemPrice: `Shirt: $${data[1].price.toFixed(2)}` },
@@ -26,10 +25,9 @@ export default function Preview() {
     fetchData();
   }, []);
 
-
   const handleImageClick = (product) => {
     const productId = product.id;
-    navigate(`/Store/${productId}`, { state:  {product} });
+    navigate(`/Store/${productId}`, { state: { product } });
   };
 
   return (
@@ -37,12 +35,17 @@ export default function Preview() {
       Featured Items
       <div className={Styles.mainContainer}>
         {products.map((product) => (
-          <div style={{maxWidth: "fit-content"}} className={Styles.previewBoxes} key={product.id} onClick={() => handleImageClick(product)}>
+          <div
+            style={{ maxWidth: "fit-content" }}
+            className={Styles.previewBoxes}
+            key={product.id}
+            onClick={() => handleImageClick(product)}
+          >
             <img
               className={Styles.previewImgs}
               src={product.image}
               alt={product.title}
-              style={{maxWidth: "300px", maxHeight: "200px"}}
+              style={{ maxWidth: "300px", maxHeight: "200px" }}
             />
             <h1>{product.itemPrice}</h1>
           </div>

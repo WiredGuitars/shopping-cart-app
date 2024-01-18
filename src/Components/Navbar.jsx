@@ -4,7 +4,6 @@ import Styles from "../assets/Navbar.module.css";
 import Cart from "../assets/blackShoppingCart.png";
 import { Link } from "react-router-dom";
 import { useCart } from "./CartProvider";
-import Checkout from "./Checkout";
 
 export default function Navbar() {
   const { getTotalItems } = useCart();
